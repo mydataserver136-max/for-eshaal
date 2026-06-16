@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome Eshaal</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffd6e8, #ffeef5);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* floating hearts */
+.heart {
+    position: absolute;
+    color: #ff69b4;
+    font-size: 20px;
+    animation: floatUp 6s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-10vh) scale(1.2);
+        opacity: 0;
+    }
+}
+
+/* main card */
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 340px;
+    z-index: 10;
+}
+
+h1 {
+    color: #ff69b4;
+    font-size: 22px;
+}
+
+p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 18px;
+    background: #ff85c1;
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #ff4fa3;
+    transform: scale(1.05);
+}
+
+/* mobile tweaks */
+@media (max-width: 480px) {
+    h1 { font-size: 20px; }
+    .card { padding: 25px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- floating hearts -->
+<script>
+for (let i = 0; i < 15; i++) {
+    let heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "💖";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (3 + Math.random() * 5) + "s";
+    heart.style.fontSize = (10 + Math.random() * 20) + "px";
+    document.body.appendChild(heart);
+}
+</script>
+
+<div class="card">
+    <h1>Hello Eshaal 💕</h1>
+    <p>Your special beta app is ready to download.</p>
+
+    <a class="button" href="app.apk" download>
+        Download APK
+    </a>
+</div>
+
+</body>
+</html>
